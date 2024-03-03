@@ -4,6 +4,8 @@
 
 ```
 npm install
+
+npm install -g nodemon
 ```
 
 ### Run for development
