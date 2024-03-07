@@ -1,6 +1,9 @@
 const express = require('express')
+var http = require('http')
 const app = express()
-const server = http.createServer(process.env.PORT || 3000);
+
+
+const server = http.createServer(app);
 
 app.use((req,res,next)=>{
   res.setHeader('Access-Control-Allow-Origin','*');
@@ -21,6 +24,7 @@ app.get('/searchRestaurant', (req, res) => {
   
 })
 
-app.listen(server, () => {
-  console.log(`Example app listening on port ${server}`)
-})
+const port = process.env.PORT || 3004;
+server.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  });
